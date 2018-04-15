@@ -179,3 +179,32 @@
     USERNAME 
   FROM 
     V$SESSION;  -- The processes having no username is related to background process 
+
+
+
+ -- https://wpollock.com/Oracle/Views.htm  [List of commonly used views]
+
+
+
+     /*   #########   MISCELLANEOUS VIEW DEMO   ##########   */
+     
+/* 
+   SESSION_PRIVS --> contains system privileges which are active for current user and session
+   
+   DICTIONARY  --> contains info about all data dictionary tables and views (***)
+   
+   DICT_COLUMNS  --> contains info about all columns related to data dictionary tables and views
+   
+   TABLE_PRIVILEGES --> contains current object privileges for current user and session
+*/
+
+
+
+
+
+
+
+
+
+
+
