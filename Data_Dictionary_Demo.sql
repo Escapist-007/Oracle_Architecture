@@ -2,18 +2,20 @@
    Author : Md Moniruzzaman Monir
 */
 
-  /*
-    Common questions related to Data Dictionary :
-      1. List all the 'users' of the database
-      2. What are the currently running sessions in the database?
-      3. How much total space is occupied by all the users? 
-      etc.
-      
-    All these info related to database are stored in "Data Dictionary".
-    
-  */
 
-                                    /*   #########  What is Data Dictionary?  ##########   */
+/*
+  
+  Common questions related to Data Dictionary :
+    1. List all the 'users' of the database
+    2. What are the currently running sessions in the database?
+    3. How much total space is occupied by all the users? 
+    etc.
+
+  All these info related to database are stored in "Data Dictionary".
+
+*/
+
+                                 /*   #########  What is Data Dictionary?  ##########   */
 /* 
    'Data Dictionary' is a set of some tables and views which contain information about the database. The tables are called 'Base Tables' which are under the 'SYS' user. There are 1200+ views which are 
     created on top of the base tables. Instead of documenting the base tables oracle has created the views and document them. There are mainly 4 types of views:
@@ -31,10 +33,10 @@
 */
 
 
-                                   /*   #########   STATIC VIEW DEMO   ##########   */
+                                   /*   #########   STATIC VIEW DEMO   ##########  */
 
 /* 
-   Static views contain information about various database objects (ex: tables, procedures, privileges, users, indexes, functions, sysnonyms etc.).
+   Static views contain information about various database objects (ex: tables, procedures, privileges, users, indexes,     functions, sysnonyms etc.).
    Contents of these views are changed by DDL operation, ex: If the structure of any object is changed like a table is dropped or a column is added etc.
    3 types of static views :
    
@@ -50,6 +52,8 @@
         Ex: DBA_TABLES, DBA_TAB_COLUMNS, DBA_CONSTRAINTS, DBA_INDEXES (Important to see all the indexes), DBA_TABLESPACES, DBA_DATA_FILES, DBA_OBJECTS, DBA_SEGMENTS, DBA_EXTENTS, DBA_VIEWS,
         DBA_SYNONYMS, DBA_FREE_SPACE, DBA_TRIGGERS, DBA_SYS_PRIVS, DBA_TAB_PRIVS etc.
 */
+
+
 
    SHOW USER;  -- Make sure the user has SELECT_CATALOG_ROLE role in order to query from the 'DBA_' views
   
@@ -90,7 +94,7 @@
        ALL_TABLES
     WHERE TABLESPACE_NAME  = 'USERS';
 
-  -- All the tables in the Database.  [Need SELECT_CATALOG_ROLE role]       ###### DBA_ #####
+  -- All tables in the Database.  [Need SELECT_CATALOG_ROLE role]       ###### DBA_ #####
   
    DESC DBA_TABLES;
 
@@ -134,33 +138,4 @@
      FILE_NAME 
    FROM
      DBA_DATA_FILES;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
