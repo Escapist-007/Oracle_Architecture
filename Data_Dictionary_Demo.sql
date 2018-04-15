@@ -103,8 +103,37 @@
    FROM
      DBA_TABLES;
      
+     --            ######         COMMON DBA_ VIEWS        #####
+     
+  --- List all the USERS in the database
+  
+    DESC DBA_USERS;
+    
+    SELECT
+      USERNAME,
+      USER_ID, 
+      PASSWORD,       -- null / encrypted
+      ACCOUNT_STATUS, -- user is locked or open
+      LOCK_DATE,
+      EXPIRY_DATE,
+      DEFAULT_TABLESPACE
+   FROM 
+      DBA_USERS;
 
-
+   -- Checking the blocksize of all tablespaces (Important)
+  
+   DESC DBA_TABLESPACES;
+   
+   SELECT
+     TABLESPACE_NAME,
+     BLOCK_SIZE
+   FROM
+      DBA_TABLESPACES;  
+    
+   SELECT
+     FILE_NAME 
+   FROM
+     DBA_DATA_FILES;
 
 
 
