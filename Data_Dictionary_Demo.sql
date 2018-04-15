@@ -51,15 +51,58 @@
         DBA_SYNONYMS, DBA_FREE_SPACE, DBA_TRIGGERS, DBA_SYS_PRIVS, DBA_TAB_PRIVS etc.
 */
 
+   SHOW USER;  -- Make sure the user has SELECT_CATALOG_ROLE role in order to query from the 'DBA_' views
+  
+  -- All the tables owned (created) by the current user     ###### USER_ #####
+  
+   DESC USER_TABLES;
+   
+   SELECT
+      TABLE_NAME,
+      TABLESPACE_NAME,
+      STATUS,
+      INSTANCES
+   FROM
+      USER_TABLES;
 
+  -- All the tables owned (created) by the current user + the tables on which the current user has privileges.  ###### ALL_ #####
+  
+    DESC ALL_TABLES;
+  
+    SELECT
+       OWNER, 
+       TABLE_NAME,
+       TABLESPACE_NAME,
+       STATUS,
+       INSTANCES
+    FROM
+       ALL_TABLES;
+    
+    -- See tables from a specific tablespace 
+    
+    SELECT
+       OWNER, 
+       TABLE_NAME,
+       TABLESPACE_NAME,
+       STATUS,
+       INSTANCES
+    FROM
+       ALL_TABLES
+    WHERE TABLESPACE_NAME  = 'USERS';
 
+  -- All the tables in the Database.  [Need SELECT_CATALOG_ROLE role]       ###### DBA_ #####
+  
+   DESC DBA_TABLES;
 
-
-
-
-
-
-
+   SELECT
+     OWNER, 
+     TABLE_NAME,
+     TABLESPACE_NAME,
+     STATUS,
+     INSTANCES
+   FROM
+     DBA_TABLES;
+     
 
 
 
