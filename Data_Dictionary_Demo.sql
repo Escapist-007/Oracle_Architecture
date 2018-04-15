@@ -31,7 +31,63 @@
 */
 
 
-                                 
+                                   /*   #########   STATIC VIEW DEMO   ##########   */
+
+/* 
+   Static views contain information about various database objects (ex: tables, procedures, privileges, users, indexes, functions, sysnonyms etc.).
+   Contents of these views are changed by DDL operation, ex: If the structure of any object is changed like a table is dropped or a column is added etc.
+   3 types of static views :
+   
+   1. USER_ 
+        Display only the information about current user objects. Ex: USER_TABLES
+  
+   2. ALL_
+        Display information about current user objects and other objects the user has privileges on. Ex: ALL_TABLES
+  
+   3. DBA_
+        Display information about all user objects. ( Should have a SELECT_CATALOG_ROLE role ). 
+        
+        Ex: DBA_TABLES, DBA_TAB_COLUMNS, DBA_CONSTRAINTS, DBA_INDEXES (Important to see all the indexes), DBA_TABLESPACES, DBA_DATA_FILES, DBA_OBJECTS, DBA_SEGMENTS, DBA_EXTENTS, DBA_VIEWS,
+        DBA_SYNONYMS, DBA_FREE_SPACE, DBA_TRIGGERS, DBA_SYS_PRIVS, DBA_TAB_PRIVS etc.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
