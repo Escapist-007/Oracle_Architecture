@@ -139,3 +139,43 @@
    FROM
      DBA_DATA_FILES;
 
+
+                            /*   #########   DYNAMIC VIEW DEMO   ##########   */
+
+/*
+   Dynamic performance views contain about current sessions, database, transactions, logs etc. These views are updated at startup time. They are continually updated during the life of a instance.
+   
+   Example: V$PARAMETER, 
+            V$DATABASE (info about database name, id, archive_log_mode etc.), 
+            V$INSTANCE, V$SESSION, V$LOCK, V$TRANSACTION, 
+            V$LOGFILE (info about online REDO log files),
+            V$LOG, V$ARCHIVED_LOG etc.
+
+*/
+
+  DESC V$ARCHIVED_LOG;
+  
+  SELECT NAME FROM V$ARCHIVED_LOG; -- SHOW ALL THE ARCHIVED REDO LOG FILE
+
+  DESC V$DATABASE;
+  
+  SELECT           -- SHOW INFO ABOUT THE DATABASE
+    DBID,
+    NAME,
+    OPEN_MODE,
+    LOG_MODE,
+    DATAGUARD_BROKER,
+    GUARD_STATUS
+  FROM
+    V$DATABASE;
+    
+  
+  DESC V$SESSION
+
+  -- List all the running sessions
+  
+  SELECT 
+    SID, 
+    USERNAME 
+  FROM 
+    V$SESSION;  -- The processes having no username is related to background process 
