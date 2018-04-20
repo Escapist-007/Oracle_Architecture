@@ -197,14 +197,3 @@
    
    TABLE_PRIVILEGES --> contains current object privileges for current user and session
 */
-
-
-
-
-
-
-
-
-
-
-
